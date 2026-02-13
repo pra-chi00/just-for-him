@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 1</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Level 1</h2>
+<p>What is that one name you call me?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value.toLowerCase();
+
+  if(input === "yournicknamehere") {
+    window.location.href = "level2.html";
+  } else {
+    alert("Wrong answer. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
