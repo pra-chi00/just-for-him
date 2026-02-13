@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Just For My Love</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 150px;
+    }
+
+    input {
+      padding: 10px;
+      background: black;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #00ffcc;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Just For My Love</h1>
+<p>Enter your name to unlock</p>
+
+<input type="text" id="nameInput">
+<br>
+<button onclick="startGame()">Enter</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startGame() {
+  var name = document.getElementById("nameInput").value;
+
+  if(name.trim() === "") {
+    alert("You must enter your name.");
+    return;
+  }
+
+  localStorage.setItem("musicAllowed", "yes");
+
+  var music = document.getElementById("bgMusic");
+  music.volume = 0.3;
+  music.play();
+
+  setTimeout(function() {
+    window.location.href = "index.html";
+  }, 1500);
+}
+</script>
+
+</body>
+</html>
