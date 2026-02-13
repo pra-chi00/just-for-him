@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 4</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Level 4</h2>
+<p>Do you think I fell for you at first sight?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value.toLowerCase();
+
+  if(input === "yes" || input === "yeah" || input === "yup" || input === "yes love") {
+    alert("Good Job!! Let's hop onto next question");
+    window.location.href = "level5.html";
+  } else {
+    alert("Wrong answer. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
