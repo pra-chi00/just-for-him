@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 6</title>
+</head>
+
+<body style="background:black;color:#00ffcc;font-family:monospace;text-align:center;padding-top:150px;">
+
+<h2>Level 6</h2>
+<p>Where did you approach me?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value.toLowerCase();
+
+  if(input === "facebook") {
+    window.location.href = "level7.html";
+  } else {
+    alert("Wrong answer. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
