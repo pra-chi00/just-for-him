@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 5</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Level 5</h2>
+<p>Who approached other first?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value.toLowerCase();
+
+  if(input === "him" || input === "me" || input === "i did" || input === "ashu" || input === "ashish" || input === "i did love") {
+    alert("Good that u did.");
+    window.location.href = "level6.html";
+  } else {
+    alert("Wrong answer. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
