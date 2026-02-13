@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 2</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Level 2</h2>
+<p>Which year did we meet?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value;
+
+  if(input === "2019") {
+    window.location.href = "level3.html";
+  } else {
+    alert("Wrong year. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
