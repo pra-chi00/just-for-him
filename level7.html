@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 7</title>
+</head>
+
+<body style="background:black;color:#00ffcc;font-family:monospace;text-align:center;padding-top:150px;">
+
+<h2>Level 7</h2>
+<p>Who initiated the talk first with ulterior motive of making the other fall in love?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value.toLowerCase();
+
+  if(input === "you" || input === "prachi" || input === "my brownie" || input === "brownie" || input === "love" || input === "my love" || input === "you darling") {
+    window.location.href = "level8.html";
+  } else {
+    alert("Wrong answer. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
