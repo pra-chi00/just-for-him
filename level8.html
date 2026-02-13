@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Level 8</title>
+</head>
+
+<body style="background:black;color:#00ffcc;font-family:monospace;text-align:center;padding-top:150px;">
+
+<h2>Final Level</h2>
+<p>Did you know you would make me fall for you more in coming days?</p>
+
+<input type="text" id="answer">
+<br>
+<button onclick="checkAnswer()">Submit</button>
+
+<audio id="bgMusic" loop>
+  <source src="soft.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+if(localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.3;
+  music.play();
+}
+
+function checkAnswer() {
+  var input = document.getElementById("answer").value.toLowerCase();
+
+  if(input === "yes" || input === "yup" || input === "yeah" || input === "of course") {
+    alert("You unlocked my heart forever ❤️");
+  } else {
+    alert("Wrong answer. Try again.");
+  }
+}
+</script>
+
+</body>
+</html>
